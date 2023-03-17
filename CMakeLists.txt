@@ -21,7 +21,13 @@ FetchContent_Declare(
     GIT_TAG main
 )
 
-FetchContent_MakeAvailable(PlatformB UtilA)
+FetchContent_Declare(
+    UtilB
+    GIT_REPOSITORY https://github.com/cmake-paul/util_b.git
+    GIT_TAG main
+)
+
+FetchContent_MakeAvailable(PlatformB UtilA UtilB)
 
 add_executable(main)
 
@@ -32,4 +38,5 @@ target_link_libraries(
     main
     PRIVATE
     UtilA
+    UtilB
 )
