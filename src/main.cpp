@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Welcome to application main from project parent_a.\n\n";
+    std::cout << "Welcome to application main from project parent_b.\n\n";
 
     greet_world();
 
