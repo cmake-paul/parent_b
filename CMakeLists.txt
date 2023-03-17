@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.25)
 
 project(
-    parent_1
+    parent_b
     VERSION 0.0.1
     DESCRIPTION "A parent project"
     LANGUAGES CXX
@@ -10,8 +10,8 @@ project(
 include(FetchContent)
 
 FetchContent_Declare(
-    PlatformA
-    GIT_REPOSITORY https://github.com/cmake-paul/platform_a.git
+    PlatformB
+    GIT_REPOSITORY https://github.com/cmake-paul/platform_b.git
     GIT_TAG main
 )
 
@@ -21,7 +21,13 @@ FetchContent_Declare(
     GIT_TAG main
 )
 
-FetchContent_MakeAvailable(PlatformA UtilA)
+FetchContent_Declare(
+    UtilB
+    GIT_REPOSITORY https://github.com/cmake-paul/util_b.git
+    GIT_TAG main
+)
+
+FetchContent_MakeAvailable(PlatformB UtilA UtilB)
 
 add_executable(main)
 
@@ -32,4 +38,5 @@ target_link_libraries(
     main
     PRIVATE
     UtilA
+    UtilB
 )
