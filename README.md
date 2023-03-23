@@ -23,4 +23,12 @@ This will build a binary at `${repo_root}/build/Release/main` (other locations a
 After building the binary, executing it will output something similar to
 
 ```bash
+> ./Release/main
+Welcome to application main from project parent_b.
+
+This is util_a, echoing you the following greeting:
+'Hello, this is a greeting from platform_b!'
+
+This is util_b, echoing you the following reversed greeting:
+'!b_mroftalp morf gniteerg a si siht ,olleH'
 ```
